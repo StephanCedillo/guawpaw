@@ -1,0 +1,184 @@
+.download-container {
+  position: relative;
+  width: 100%; /* Ajusta el tamaño al 100% */
+  height: 100vh; /* Ajusta el tamaño al 100% del alto de la ventana */
+  display: flex;
+  flex-direction: row; /* Horizontal en pantallas grandes */
+  align-items: center; /* Centra horizontalmente */
+  justify-content: center; /* Centra verticalmente */
+  gap: 15px;
+  padding: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  pointer-events: none;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+/* Animaciones de los pseudo-elementos */
+@keyframes downloadBounce {
+  to {
+      transform: translateY(0px) rotate(50deg);
+  }
+}
+
+@keyframes downloadBounce2 {
+  to {
+      transform: translateY(0px) rotate(-50deg);
+  }
+}
+
+body {
+  background: #D6DCE4;
+  text-align: center;
+  padding: 4em 0;
+  font-family: 'Open Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+}
+
+.download {
+  -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
+  overflow: hidden;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background: rgb(122, 131, 137);
+  border: 2px solid rgb(52, 58, 62);
+  color: white;
+  padding: 26px 0 26px 28px;
+  width: 220px;
+  display: inline-block;
+  position: relative;
+  transition: all 300ms ease;
+  margin-right: 25px;
+}
+
+.download span {
+  display: block;
+  position: relative;
+  z-index: 1;
+  transform: translate(0, 0);
+  margin-left: 30px;
+}
+
+.download span:after,
+.download span:before {
+  content: '';
+  width: 1px;
+  height: 16px;
+  background: rgba(0,124,205,1);
+  opacity: 0;
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transition: all 10ms ease-out;
+  transform-origin: center bottom;
+  transform: translateY(0) rotate(0deg);
+  animation: 0;
+}
+
+.download svg {
+  z-index: 0;
+  fill: rgba(255,255,255,1);
+  position: absolute;
+  left: 20%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(0deg) scale(.04857);
+  transition: all 350ms ease-out;
+  height: 700px;
+}
+
+.download svg#linux {
+  transform: translate(-50%, -50%) rotate(0deg) scale(.05857);
+}
+
+.download:hover {
+  padding: 26px 0;
+  color: rgb(144, 241, 191);
+}
+
+.download:hover svg {
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(60deg) scale(1);
+}
+
+.download:hover svg#windows {
+  transform: translate(-50%, -10%) rotate(60deg) scale(1);
+}
+
+.download:hover svg#linux {
+  transform: translate(-120%, -125%) rotate(60deg) scale(6);
+}
+
+.download:hover span {
+  transform: translate(0, -10px) scale(1.1);
+  transition: transform 400ms ease-out 400ms;
+}
+
+.download:hover span:after,
+.download:hover span:before {
+  opacity: 1;
+  transition: all 400ms ease-out 400ms, transform 300ms ease-in 100ms;
+}
+
+.download:hover span:after {
+  transform: translateY(7px) rotate(50deg);
+  animation: downloadBounce 800ms linear alternate infinite;
+}
+
+.download:hover span:before {
+  transform: translateY(7px) rotate(-50deg);
+  animation: downloadBounce2 800ms linear alternate infinite;
+}
+
+/* Media Queries para hacer la interfaz responsiva */
+@media (max-width: 768px) {
+  .download-container {
+      flex-direction: column; /* Cambia a columna en pantallas más pequeñas */
+      padding: 10px;
+  }
+
+  .download {
+      width: 180px; /* Ajusta el tamaño en pantallas más pequeñas */
+      padding: 20px 0;
+  }
+
+  .download svg {
+      height: 500px; /* Ajusta el tamaño de los SVG en pantallas más pequeñas */
+  }
+
+  .download span {
+      margin-left: 75px; /* Ajusta el margen en pantallas más pequeñas */
+  }
+}
+
+@media (max-width: 480px) {
+  .download-container {
+      padding: 5px;
+  }
+
+  .download {
+      width: 150px; /* Ajusta aún más el tamaño */
+      padding: 15px 0;
+  }
+
+  .download svg {
+      height: 400px; /* Ajusta el tamaño de los SVG en pantallas muy pequeñas */
+  }
+
+  .download span {
+      margin-left: 50px; /* Ajusta el margen aún más */
+  }
+}

@@ -1,0 +1,9 @@
+
+<div *ngIf="isLoading" class="loader-container">
+    <div class="loader">
+       <app-loader-animation></app-loader-animation>
+    </div>
+</div>
+<ng-container *ngIf="!isLoading">
+    <app-pagina></app-pagina>
+</ng-container>

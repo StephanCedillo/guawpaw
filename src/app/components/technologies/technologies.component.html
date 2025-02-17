@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="left">
+        <div class="left-content">
+            <h1>Tecnologías<br> Usadas</h1>
+            <h3>Las herramientas que hacen posible Guawpaw</h3>
+        </div>
+    </div>
+    <div class="right">
+      <div class="container">
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Función</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let programa of programas"
+                (mouseover)="showCard(programa, $event)"
+                (mousemove)="moveCard($event)"
+                (mouseleave)="hideCard()">
+              <td>{{ programa.nombre }}</td>
+              <td>{{ programa.funcion }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <!-- Tarjeta flotante -->
+      <div class="card" *ngIf="isCardVisible" [ngStyle]="{'top.px': cardY, 'left.px': cardX}">
+        <img [src]="cardImg" alt="Preview">
+      </div>
+      
+    </div>
+</div>

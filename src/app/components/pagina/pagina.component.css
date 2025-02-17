@@ -1,0 +1,27 @@
+/* Establece el contenedor principal para ocupar toda la altura de la ventana */
+body, html {
+    height: 100%;
+  }
+  
+  /* Contenedor principal para toda la estructura */
+  .main-container {
+     /* Habilita el scroll vertical */
+  }
+  
+  /* Estilo de los componentes individuales */
+  app-navbar, app-header, app-home, app-about, app-objectives, app-image, app-descarga, app-footer {
+    width: 100%;
+  }
+  
+  /* Asegura que cada componente ocupe el espacio adecuado sin estirarse innecesariamente */
+  app-header, app-footer {
+    flex-shrink: 0;  /* Estos elementos no deben reducir su tamaño */
+  }
+
+  
+  /* Estilo para asegurar que el contenido tenga un fondo si es necesario */
+  body {
+    background-color: #101010;  /* Fondo gris claro */
+  }
+  
+  

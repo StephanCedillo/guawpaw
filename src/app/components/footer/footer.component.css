@@ -1,0 +1,159 @@
+/* Estilos para el footer */
+.footer {
+    width: 100%;
+    
+    background-size: cover;
+    background-position: center;
+    padding: 50px 20px;
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+/* Div para la imagen de fondo */
+.background {
+    position: absolute; /* Ponerlo detrás de todo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://jiffygroup.com/es/wp-content/uploads/2023/06/jiff-jiffygrouplatam-image-914_1a807c5fe21a7f81736c8171bda9dc72_2000.jpeg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px); /* Desenfoque de la imagen */
+    background-color: rgba(0, 0, 0, 0.6); /* Oscurecer la imagen */
+    z-index: -1; /* Asegura que quede atrás */
+}
+.background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Color negro con opacidad */
+    z-index: -1; /* Asegura que la capa de opacidad esté sobre el fondo desenfocado */
+}
+
+/* Contenido dentro del footer */
+.footer-content {
+    display: flex;
+    justify-content: space-between; /* Distribuye las secciones horizontalmente */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilo para cada sección */
+.footer-section {
+    flex: 1; /* Hace que cada sección ocupe el mismo espacio */
+    padding: 20px;
+}
+
+.footer-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.footer-section p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column; /* Cambia la distribución a columna en pantallas pequeñas */
+        align-items: center; /* Centra las secciones */
+    }
+  
+    .footer-section {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+}
+/* Estilo para el footer */
+.footer {
+    width: 100%;
+    background-image: url('https://jiffygroup.com/es/wp-content/uploads/2023/06/jiff-jiffygrouplatam-image-914_1a807c5fe21a7f81736c8171bda9dc72_2000.jpeg');
+    background-size: cover;
+    background-position: center;
+    padding: 50px 20px;
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+
+/* Estilo para el título */
+footer h1 {
+    line-height: 2rem; /* Ajuste del espacio entre líneas */
+    font-family: 'Patrick Hand SC', cursive;
+    font-size: 5rem; /* Ajuste del tamaño */
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 5px; /* Espacio debajo del título */
+  margin-right: 7em;
+}
+
+/* Contenido dentro del footer */
+.footer-content {
+    display: flex;
+    justify-content: space-between; /* Distribuye las secciones horizontalmente */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilo para cada sección */
+.footer-section {
+    flex: 1; /* Hace que cada sección ocupe el mismo espacio */
+    padding: 20px;
+    text-align: center; /* Centra el texto */
+}
+
+/* Estilo para los créditos */
+.footer-section.credits h3 {
+    font-family: 'Patrick Hand SC', cursive;
+    font-size: 2.5rem; /* Ajuste del tamaño */
+    font-weight: bold;
+}
+
+.footer-section.credits p {
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-size: 1.2rem; /* Ajuste del tamaño */
+    text-align: left;
+    margin-top: 2rem;
+}
+
+/* Estilo para la cita */
+.footer-section.quote p {
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-size: 1.5rem; /* Ajuste del tamaño */
+    font-style: italic;
+    margin-top: 9rem;
+}
+
+/* Estilo para el contacto */
+.footer-section.contact h3 {
+    font-family: 'Patrick Hand SC', cursive;
+    font-size: 2.5rem; /* Ajuste del tamaño */
+    font-weight: bold;
+}
+
+.footer-section.contact p {
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-size: 1.2rem; /* Ajuste del tamaño */
+    margin-top: 2rem;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column; /* Cambia la distribución a columna en pantallas pequeñas */
+        align-items: center; /* Centra las secciones */
+    }
+
+    .footer-section {
+        margin-bottom: 20px;
+    }
+}

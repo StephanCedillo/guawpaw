@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Dongle&family=Genos:ital,wght@0,100..900;1,100..900&family=Germania+One&display=swap');
+
+.containerp {
+    display: flex;
+    flex-direction: column;
+    height: 110vh;
+    background-color: #101010;
+    color: white;
+    text-align: center;
+}
+
+.top,
+.bottom {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.top {
+    height: 50%;
+}
+
+.bottom {
+    height: 50%;
+}
+
+/* Estilos de texto */
+.top h1 {
+    font-size: 2.5rem;
+    /* Más pequeño */
+    font-family: 'Delicious Handrawn', cursive;
+    margin-bottom: 8px;
+}
+
+.top h3 {
+    font-size: 1rem;
+    /* Más pequeño */
+    font-family: 'Dongle', sans-serif;
+    margin-top: 0;
+    margin-bottom: 8px;
+    line-height: 1;
+}
+
+.top p {
+    font-size: 1.3rem;
+    /* Más pequeño */
+    font-family: 'Genos', sans-serif;
+    max-width: 80%;
+    margin-bottom: 15px;
+}
+
+/* Estilos para la lista */
+.top ul {
+    font-family: 'Germania One', cursive;
+    font-size: 1.1rem;
+    /* Más pequeño */
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+    max-width: 75%;
+}
+
+.top ul li {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 6px;
+    border-radius: 8px;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Estilos Responsivos */
+@media (max-width: 1199px) {
+    .top h1 {
+        font-size: 2.2rem;
+    }
+
+    .top p {
+        font-size: 1.2rem;
+    }
+
+    .top ul {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .container {
+        height: auto;
+    }
+
+    .top,
+    .bottom {
+        height: auto;
+        padding: 15px;
+    }
+
+    .top h1 {
+        font-size: 2rem;
+    }
+
+    .top p {
+        font-size: 1.1rem;
+    }
+
+    .top ul {
+        font-size: 0.9rem;
+        max-width: 85%;
+    }
+}
+
+@media (max-width: 480px) {
+    .top h1 {
+        font-size: 1.8rem;
+    }
+
+    .top p {
+        font-size: 1rem;
+    }
+
+    .top ul {
+        font-size: 0.85rem;
+        max-width: 90%;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    background: var(--gradient-9);
+    /* Manteniendo el fondo, pero sin root */
+}
+
+.container {
+    width: 80vw;
+    height: 40vmin;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1vmin;
+    /* Directamente el valor sin la variable */
+}
+
+img {
+    transition: flex 0.5s ease-out, filter 1.2s ease-out;
+    /* Aumento del tiempo de transición */
+    height: 100%;
+    filter: grayscale(1) brightness(0.75);
+    /* Filtro sin variables */
+    object-fit: cover;
+    overflow: hidden;
+    flex: 1;
+}
+
+img:hover {
+    filter: grayscale(0) brightness(1.15);
+    /* Transición del filtro */
+    flex: 6;
+    /* Aumento del tamaño en el hover sin usar variables */
+}
