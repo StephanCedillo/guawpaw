@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
 .download-container {
   position: relative;
   width: 100%; /* Ajusta el tamaño al 100% */
@@ -22,7 +23,7 @@ canvas {
   pointer-events: none;
 }
 
-@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
 
 /* Animaciones de los pseudo-elementos */
 @keyframes downloadBounce {
